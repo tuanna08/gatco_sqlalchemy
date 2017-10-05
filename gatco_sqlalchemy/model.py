@@ -111,5 +111,8 @@ class Model(object):
     query = None
 
     def __repr__(self):
-        pk = ', '.join(str(value) for value in inspect(self).identity)
-        return '<{0} {1}>'.format(type(self).__name__, pk)
+        if inspect(self).identity is not None:
+            pk = ', '.join(str(value) for value in inspect(self).identity)
+            return '<{0} {1}>'.format(type(self).__name__, pk)
+        else:
+            return '<{0} {1}>'.format(type(self).__name__, "None")
