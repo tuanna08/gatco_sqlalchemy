@@ -277,7 +277,8 @@ class SQLAlchemy(object):
         
         self.app = app
         
-        app.extensions = app.extensions or {}
+        if (not hasattr(app, 'extensions')) or (app.extensions is None):
+            app.extensions = {}
         app.extensions['sqlalchemy'] = _SQLAlchemyState(self)
         
         
