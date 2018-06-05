@@ -344,8 +344,8 @@ class SQLAlchemy(object):
                 options['poolclass'] = NullPool
 
             # if it's not an in memory database we make the path absolute.
-            if not detected_in_memory:
-                info.database = os.path.join(app.root_path, info.database)
+            #if not detected_in_memory:
+            #    info.database = os.path.join(app.root_path, info.database)
 
         unu = app.config['SQLALCHEMY_NATIVE_UNICODE']
         if unu is None:
