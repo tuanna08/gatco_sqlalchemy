@@ -36,7 +36,7 @@ setup(
     packages=find_packages(exclude=['tests*']),
     include_package_data=True,
     install_requires=[
-        'sanic','sqlalchemy'
+        'gatco','sqlalchemy<=1.3.19'
     ],
     extras_require={
         'dev': [
