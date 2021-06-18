@@ -1,2 +1,1 @@
-sanic
 sqlalchemy<=1.3.19
